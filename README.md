@@ -14,7 +14,7 @@ I did it following a Udemy course and **I DID NOT** developed the GUI nor the HT
 
 ## How things gonna work :eyes:
 
-![Architecture](https://a2.udemycdn.com/2018-07-04_15-11-43-ac9855f7e26758616b3b86f17811f16d/original.png?nva=20200313002505&token=07bd85f70f0409a42ecd1)
+![Architecture](https://i.imgur.com/pe1FZ8i.png)
 
 
 ## At development 
