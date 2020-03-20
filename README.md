@@ -6,15 +6,15 @@ This is a study oriented project developed so I can improve my  programming Skil
 <br>
 I did it following a Udemy course and **I DID NOT** developed the GUI nor the HTML/CSS.
 <br>
-**Note**: Some of the content in this repository will be written in BRAZILIAN PORTUGUESE, due to the course language.
+**Note**: Some of the content in this repository may be written in BRAZILIAN PORTUGUESE, due to the course language. But, I did some translations and re-built some schemas (as the architecture) in english.
 
 ## That's what I'm speaking of :stuck_out_tongue_winking_eye:
 
-![Project](https://camo.githubusercontent.com/a1909b73a6e1261fe4c20b1a79cddb319394c6f6/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f68636f64652d636f6d2d62722e61707073706f742e636f6d2f6f2f44726f70426f78436c6f6e652e6a70673f616c743d6d6564696126746f6b656e3d64353963616430632d343430642d343531362d383866322d646139303462396262343433)
+![Project](https://i.imgur.com/oX5B7oO.png)
 
 ## How things gonna work :eyes:
 
-![Architecture](https://a2.udemycdn.com/2018-07-04_15-11-43-ac9855f7e26758616b3b86f17811f16d/original.png?nva=20200313002505&token=07bd85f70f0409a42ecd1)
+![Architecture](https://i.imgur.com/1JVIl2k.jpg)
 
 
 ## At development 
