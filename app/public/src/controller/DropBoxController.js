@@ -41,14 +41,14 @@ class DropBoxController {
         this.inputFilesEl.addEventListener('change', event => {
             this.uploadTask(event.target.files);
 
-            this.modalVisibility();
+            this.showModal();
 
             this.inputFilesEl.value = '';
         });
 
     }
 
-    modalVisibility(isVisible = true) {
+    showModal(isVisible = true) {
         this.snackModalEl.style.display = (isVisible) ? 'block' : 'none';
     }
 
@@ -65,7 +65,7 @@ class DropBoxController {
                 ajax.open('POST', '/upload');
                 ajax.onload = event => {
 
-                    this.modalVisibility(false);
+                    this.showModal(false);
 
                     try {
                         resolve(JSON.parse(ajax.responseText));
@@ -76,7 +76,7 @@ class DropBoxController {
                 };
 
                 ajax.onerror = event => {
-                    this.modalVisibility(false);
+                    this.showModal(false);
                     reject(event);
                 };
 
@@ -308,7 +308,7 @@ class DropBoxController {
         }
     }
 
-    getFileView() {
+    getFileView(file) {
         return `
         <li>
             ${this.getFileIconView(file)}
