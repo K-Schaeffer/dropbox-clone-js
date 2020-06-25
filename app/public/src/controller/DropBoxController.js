@@ -8,9 +8,11 @@ class DropBoxController {
         this.progressBarEl = this.snackModalEl.querySelector(".mc-progress-bar-fg");
         this.nameFileEl = this.snackModalEl.querySelector(".filename");
         this.timeLeftEl = this.snackModalEl.querySelector(".timeleft");
+        this.listFilesEl = document.querySelector("#list-of-files-and-directories");
 
         this.connectFirebase();
         this.initEvents();
+        this.readFiles();
 
     }
 
@@ -240,6 +242,7 @@ class DropBoxController {
                 break;
 
             case 'audio/mp3':
+            case 'audio/mpeg':
             case 'audio/ogg':
             case 'audio/avi':
                 return `
@@ -334,12 +337,93 @@ class DropBoxController {
         }
     }
 
-    getFileView(file) {
-        return `
+    getFileView(file, key) {
+
+        let li = document.createElement('li');
+        li.dataset.key = key;
+
+        li.innerHTML = `
         <li>
             ${this.getFileIconView(file)}
             <div class="name text-center">${file.name}</div>
         </li>`
+
+        this.initEventsLi(li);
+
+        return li;
+    }
+
+    readFiles() {
+
+        this.getFireBaseRef().on('value', snapshot => {
+
+            this.listFilesEl.innerHTML = '';
+
+            snapshot.forEach(snapshotItem => {
+
+                let key = snapshotItem.key;
+                let data = snapshotItem.val();
+
+                this.listFilesEl.appendChild(this.getFileView(data, key));
+
+            });
+
+        });
+
+    }
+
+    initEventsLi(li) {
+
+        li.addEventListener('click', e => {
+
+            if (e.shiftKey) {
+
+                let firstLi = this.listFilesEl.querySelector('.selected');
+
+                if (firstLi) {
+
+                    let firstIndex;
+                    let lastIndex;
+                    let lis = li.parentElement.childNodes;
+
+                    lis.forEach((el, index) => {
+
+                        if (firstLi === el) firstIndex = index;
+                        if (li === el) lastIndex = index;
+
+                    });
+
+                    let index = [firstIndex, lastIndex].sort();
+
+                    lis.forEach((el, i) => {
+
+                        if (i >= index[0] && i <= index[1]) {
+                            el.classList.add('selected');
+                        }
+
+                    });
+
+
+                    return true;
+
+                }
+            }
+
+            if (!e.ctrlKey) {
+
+                this.listFilesEl.querySelectorAll('li.selected')
+                    .forEach(el => {
+
+                        el.classList.remove('selected');
+
+                    });
+
+            }
+
+            li.classList.toggle('selected');
+
+        });
+
     }
 
 
