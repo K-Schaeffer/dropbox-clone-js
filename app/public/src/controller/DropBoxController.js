@@ -50,14 +50,18 @@ class DropBoxController {
         this.getSelection().forEach(li => {
 
             let file = JSON.parse(li.dataset.file);
+            let key = li.dataset.key;
 
-            promises.push(new Promise((resolve, reject) => {
+            let formData = new FormData();
 
-            }));
+            formData.append('path', file.path);
+            formData.append('key', key);
 
-            return Promise.all(promises);
+            promises.push(this.ajaxTask('DELETE', '/file', formData));
 
         });
+
+        return Promise.all(promises);
 
     }
 
@@ -67,7 +71,15 @@ class DropBoxController {
 
             this.removeTask().then(responses => {
 
+                responses.forEach(response => {
 
+                    if (response.fields.key) {
+
+                        this.getFireBaseRef().child(response.fields.key).remove();
+
+                    }
+
+                })
 
             }).catch(e => {
 
