@@ -14,7 +14,7 @@ I did it following a Udemy course and **I DID NOT** developed the GUI nor the HT
 
 ## How things gonna work :eyes:
 
-![Architecture](https://i.imgur.com/1JVIl2k.jpg)
+![Architecture](https://i.imgur.com/sJOytD0.jpg)
 
 
 ## At development 
