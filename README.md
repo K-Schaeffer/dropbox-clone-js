@@ -55,5 +55,34 @@ This clone can:
 **That's all?** Yes, at least, for now! But remember, all of this was built with PURE JS.
 <br>
 
+## How can I run this project locally?  :computer:
+Here we go, to get started with this project:
+1. Make sure to have NodeJS installed properly (If you don't, install it following their website steps)
+```
+node -v
+```
+2. Clone the repo
+```
+git clone https://github.com/K-Schaeffer/dropbox-clone-js.git
+```
+3. Install Bower dependencies (If you don't have Bower installed, click [here](https://bower.io))
+```
+bower install
+```
+4. Install NPM dependencies
+```
+npm i
+```
+5. Use your google account to access the Firebase website and create both a Realtime Database project and a Storage one
+6. Follow their docs to modify my code in order to upload your data to your database and storage, otherwise, you'll not be able to modify both of them
+
+Once you've done all of that, just run a 
+```
+npm start
+```
+(Make sure to run it inside the App directory)
+
+That's all :)
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/k-schaeffer/
