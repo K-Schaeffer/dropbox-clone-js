@@ -89,7 +89,7 @@ As a DropBox Clone, this project attempts to execute the main tasks of the softw
 
 ---
 
-<!--Preview session-->
+<!--Knowledge session-->
 ## 📚 Knowledge acquired
 
 - [x] A lot of JS:
@@ -115,6 +115,8 @@ As a DropBox Clone, this project attempts to execute the main tasks of the softw
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="Layout" title="Layout" src=".github/architecture.jpg">
 </p>
+
+---
 
 <!--Running session-->
 ## 🚀 Running the project
